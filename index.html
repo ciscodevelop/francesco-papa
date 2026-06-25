@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Francesco Papa — Founder & Builder | FlowAxion</title>
+<meta name="description" content="Francesco Papa, founder e builder di FlowAxion: la piattaforma AI-native che sintetizza la realtà aziendale in memoria, blueprint e agenti operativi.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{
+    --bg:#070b14;--bg-2:#0b1120;--panel:#0e1626;--panel-2:#111b2e;--line:#1c2840;
+    --ink:#eaf0fb;--muted:#8493b0;--cyan:#22d3ee;--violet:#a78bfa;--lime:#a3e635;
+    --grad:linear-gradient(120deg,var(--cyan),var(--violet));--maxw:1140px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{font-weight:700;font-size:17px;letter-spacing:-.01em;display:flex;align-items:center;gap:11px}
+  .brand .sq{width:20px;height:20px;border-radius:6px;background:var(--grad);box-shadow:0 0 18px rgba(34,211,238,.5)}
+  .nav-links{display:none;gap:30px;font-size:14px;color:var(--muted)}
+  .nav-links a{transition:color .2s}.nav-links a:hover{color:var(--ink)}
+  .nav-cta{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:13px;padding:9px 16px;border:1px solid var(--line);border-radius:8px;color:var(--cyan);transition:.2s}
+  .nav-cta:hover{border-color:var(--cyan);box-shadow:0 0 16px rgba(34,211,238,.18)}
+  @media(min-width:860px){.nav-links{display:flex}}
+  .hero{position:relative;padding:84px 0 70px;border-bottom:1px solid var(--line);overflow:hidden;background:radial-gradient(80% 60% at 78% -5%, rgba(167,139,250,.16), transparent 60%),radial-gradient(70% 50% at 10% 10%, rgba(34,211,238,.1), transparent 55%)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;opacity:.35;mask-image:radial-gradient(70% 70% at 50% 30%,#000,transparent)}
+  .hero .inner{position:relative}
+  .badge{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--cyan);border:1px solid var(--line);background:rgba(34,211,238,.06);padding:6px 13px;border-radius:999px;margin-bottom:26px}
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+  .hero h1{font-weight:700;font-size:clamp(42px,11vw,78px);line-height:1.0;letter-spacing:-.035em}
+  .hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero .role{margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:clamp(14px,4vw,18px);color:var(--muted)}
+  .hero .role b{color:var(--ink);font-weight:500}
+  .hero p.lead{margin-top:22px;max-width:62ch;font-size:clamp(15px,4vw,18px);color:#c2cde0}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:14px;padding:13px 22px;border-radius:10px;transition:.2s;display:inline-flex;align-items:center;gap:9px}
+  .btn-primary{background:var(--grad);color:#06101e;font-weight:600}.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px rgba(34,211,238,.5)}
+  .btn-ghost{border:1px solid var(--line);color:#c2cde0}.btn-ghost:hover{border-color:var(--cyan);color:var(--ink)}
+  section.block{padding:66px 0}
+  .sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--cyan);margin-bottom:14px}
+  .sec-eyebrow::before{content:"// "}
+  .sec-title{font-weight:700;font-size:clamp(26px,7vw,40px);line-height:1.06;letter-spacing:-.025em;margin-bottom:14px}
+  .sec-sub{color:var(--muted);max-width:62ch;margin-bottom:40px}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  @media(min-width:680px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{background:var(--panel);padding:24px 20px}
+  .stat .k{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:clamp(22px,5vw,28px);background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .v{font-size:12px;color:var(--muted);margin-top:6px}
+  .cards{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
+  @media(min-width:980px){.cards.three{grid-template-columns:repeat(3,1fr)}}
+  .card{position:relative;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:26px 24px;transition:.25s}
+  .card:hover{border-color:#2a3a5c;transform:translateY(-3px)}
+  .card .tagx{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--violet);margin-bottom:12px}
+  .card h3{font-weight:600;font-size:19px;margin-bottom:9px;letter-spacing:-.01em}
+  .card p{font-size:14.5px;color:var(--muted)}
+  .stack{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:13px;padding:8px 13px;border:1px solid var(--line);border-radius:8px;color:#bcd0ea;background:var(--panel)}
+  .chip span{color:var(--cyan)}
+  .terminal{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-family:'JetBrains Mono',monospace}
+  .term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .term-bar i{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .term-bar .r{background:#ff5f56}.term-bar .y{background:#ffbd2e}.term-bar .g{background:#27c93f}
+  .term-bar span{margin-left:8px;font-size:12px;color:var(--muted)}
+  .term-body{padding:20px 18px;font-size:13.5px;line-height:1.9;overflow-x:auto}
+  .term-body .c{color:var(--muted)}.term-body .k{color:var(--cyan)}.term-body .v{color:var(--lime)}.term-body .p{color:var(--violet)}
+  .term-body .pr{color:var(--cyan)}
+  .values{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:680px){.values{grid-template-columns:1fr 1fr}}
+  @media(min-width:1040px){.values{grid-template-columns:repeat(4,1fr)}}
+  .v-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 20px}
+  .v-card h4{font-weight:600;font-size:16px;margin-bottom:8px}
+  .v-card p{font-size:14px;color:var(--muted)}
+  .cta-band{background:linear-gradient(120deg,rgba(34,211,238,.1),rgba(167,139,250,.08));border:1px solid var(--line);border-radius:20px;padding:40px 30px}
+  .qr-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+  @media(min-width:760px){.qr-wrap{flex-direction:row;text-align:left;justify-content:space-between;gap:36px}}
+  .qr-box{flex-shrink:0;width:176px;height:176px;border-radius:16px;border:8px solid #fff;background:#fff}
+  .qr-box img{width:100%;height:100%;display:block}
+  .qr-text h3{font-weight:700;font-size:clamp(22px,5vw,30px);margin-bottom:10px;letter-spacing:-.02em}
+  .qr-text p{color:#c2cde0;font-size:15px;max-width:48ch}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:560px){.contact-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:980px){.contact-grid{grid-template-columns:repeat(4,1fr)}}
+  .cc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 20px;transition:.2s}
+  .cc:hover{border-color:var(--cyan)}
+  .cc .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+  .cc a,.cc span{font-weight:600;font-size:15px;color:var(--ink);word-break:break-word}
+  .cc a:hover{color:var(--cyan)}
+  footer.site{border-top:1px solid var(--line);padding:46px 0 40px;margin-top:24px;background:var(--bg-2)}
+  .foot-grid{display:flex;flex-direction:column;gap:26px}
+  @media(min-width:680px){.foot-grid{flex-direction:row;justify-content:space-between;align-items:flex-start}}
+  .foot-brand{font-weight:700;font-size:20px;display:flex;align-items:center;gap:11px}
+  .foot-brand .sq{width:18px;height:18px;border-radius:5px;background:var(--grad)}
+  .foot-desc{font-size:14px;color:var(--muted);margin-top:12px;max-width:42ch}
+  .foot-cols{display:flex;gap:46px;flex-wrap:wrap}
+  .foot-col h4{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;color:var(--muted);margin-bottom:14px}
+  .foot-col a{display:block;font-size:14px;color:#c2cde0;margin-bottom:9px;transition:color .2s}
+  .foot-col a:hover{color:var(--cyan)}
+  .copyright{border-top:1px solid var(--line);margin-top:34px;padding-top:22px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);text-align:center}
+  @media(prefers-reduced-motion:no-preference){
+    .badge,.hero h1,.hero .role,.hero p.lead,.hero-actions{animation:fade .7s cubic-bezier(.2,.7,.2,1) both}
+    .hero h1{animation-delay:.05s}.hero .role{animation-delay:.1s}.hero p.lead{animation-delay:.15s}.hero-actions{animation-delay:.2s}
+    @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand"><span class="sq"></span>Francesco Papa</a>
+      <div class="nav-links">
+        <a href="#build">Cosa costruisco</a>
+        <a href="#stack">Stack</a>
+        <a href="#approccio">Approccio</a>
+        <a href="#contatti">Contatti</a>
+      </div>
+      <a href="#contatti" class="nav-cta">get in touch</a>
+    </div>
+  </nav>
+  <header class="hero" id="top">
+    <div class="wrap inner">
+      <span class="badge"><span class="dot"></span>Founder &amp; CTO · FlowAxion</span>
+      <h1>Francesco <span class="g">Papa</span></h1>
+      <p class="role">Costruisco <b>FlowAxion</b> — il sintetizzatore della realtà aziendale.</p>
+      <p class="lead">Founder solista che opera tra direzione di prodotto e architettura tecnica nello stesso momento. Progetto e scrivo una piattaforma AI-native multi-tenant che trasforma la realtà sparsa di un'azienda in Business Memory strutturata, blueprint, workflow e agenti operativi. Dalla visione all'ultima riga di codice.</p>
+      <div class="hero-actions">
+        <a href="#contatti" class="btn btn-primary">Parliamo →</a>
+        <a href="#build" class="btn btn-ghost">Cosa costruisco</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="block" id="numeri">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><div class="k">1</div><div class="v">Founder · CEO · CTO</div></div>
+        <div class="stat"><div class="k">AI-native</div><div class="v">Architettura piattaforma</div></div>
+        <div class="stat"><div class="k">Multi-tenant</div><div class="v">Un motore, tante aziende</div></div>
+        <div class="stat"><div class="k">0→1</div><div class="v">Dalla visione al deploy</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="build">
+    <div class="wrap">
+      <div class="sec-eyebrow">cosa costruisco</div>
+      <h2 class="sec-title">FlowAxion e ciò che ci gira attorno</h2>
+      <p class="sec-sub">Una piattaforma che sintetizza il caos operativo in struttura: memoria, blueprint, agenti e output pronti all'uso. Attorno al core, un ecosistema di moduli verticali costruiti sul campo, con tenant reali.</p>
+      <div class="cards three">
+        <div class="card"><div class="tagx">~/ il-sintetizzatore</div><h3>Business Memory &amp; Blueprint</h3><p>FlowAxion raccoglie la realtà sparsa di un'azienda e la trasforma in memoria strutturata, blueprint atomico, workflow e agenti operativi.</p></div>
+        <div class="card"><div class="tagx">~/ pos &amp; operations</div><h3>POS &amp; runtime offline-first</h3><p>Direttore di Sala Digitale, resilienza offline-first, device bridge su hardware reale. Sistemi che non si fermano anche senza rete.</p></div>
+        <div class="card"><div class="tagx">~/ payments</div><h3>FlowAxion Pay</h3><p>Pagamenti integrati con webhook verificati e contratti di payment-request estratti direttamente dal codice. Sicurezza fail-closed.</p></div>
+        <div class="card"><div class="tagx">~/ connectors</div><h3>Tenant Integrations Vault</h3><p>Sistema di connettori catalog-driven — OAuth, Stripe Connect, server MCP — con secret cifrati AES-256-GCM.</p></div>
+        <div class="card"><div class="tagx">~/ care</div><h3>FlowAxion Care</h3><p>Motore agentico omnichannel metadata-driven, con livelli di autonomia legati alla completezza del Digital Passport.</p></div>
+        <div class="card"><div class="tagx">~/ devices</div><h3>Device &amp; fleet</h3><p>Integrazione su SmartPOS e terminali di pagamento, dal bridge ADB alle linee di automazione. Software che tocca il mondo fisico.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="stack">
+    <div class="wrap">
+      <div class="sec-eyebrow">stack &amp; competenze</div>
+      <h2 class="sec-title">Full-spectrum, dal prodotto al deploy</h2>
+      <p class="sec-sub">Una sola persona che attraversa l'intera catena: strategia di prodotto, architettura, scrittura del codice, sicurezza e messa in produzione.</p>
+      <div class="cards" style="margin-bottom:26px">
+        <div class="card">
+          <div class="tagx">~/ engineering</div>
+          <h3>Architettura &amp; codice</h3>
+          <div class="stack">
+            <span class="chip"><span>$</span> TypeScript</span>
+            <span class="chip"><span>$</span> Next.js</span>
+            <span class="chip"><span>$</span> MongoDB</span>
+            <span class="chip"><span>$</span> PostgreSQL</span>
+            <span class="chip"><span>$</span> Monorepo</span>
+            <span class="chip"><span>$</span> Kotlin</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tagx">~/ ai &amp; product</div>
+          <h3>AI, prodotto, direzione</h3>
+          <div class="stack">
+            <span class="chip"><span>$</span> AI-native design</span>
+            <span class="chip"><span>$</span> Multi-agent</span>
+            <span class="chip"><span>$</span> MCP</span>
+            <span class="chip"><span>$</span> Architettura SaaS</span>
+            <span class="chip"><span>$</span> Security</span>
+            <span class="chip"><span>$</span> GTM</span>
+          </div>
+        </div>
+      </div>
+      <div class="terminal">
+        <div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>francesco@flowaxion: ~/platform</span></div>
+        <div class="term-body mono">
+<span class="c"># un founder, l'intera catena del valore</span><br>
+<span class="pr">$</span> <span class="k">whoami</span><br>
+&nbsp;&nbsp;→ <span class="v">Francesco Papa</span> · founder, CEO &amp; CTO<br>
+<span class="pr">$</span> <span class="k">flowaxion</span> <span class="p">--describe</span><br>
+&nbsp;&nbsp;→ piattaforma <span class="v">AI-native</span>, <span class="v">multi-tenant</span> per le PMI<br>
+<span class="pr">$</span> <span class="k">role</span> <span class="p">--scope</span><br>
+&nbsp;&nbsp;→ visione · architettura · codice · sicurezza · deploy<br>
+<span class="pr">$</span> <span class="k">status</span><br>
+&nbsp;&nbsp;→ <span class="v">building</span> <span class="c">// in continua evoluzione</span><br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="approccio">
+    <div class="wrap">
+      <div class="sec-eyebrow">approccio</div>
+      <h2 class="sec-title">Come lavoro</h2>
+      <p class="sec-sub">Il modo in cui costruisco è parte del valore: niente ipotesi, niente scorciatoie. Codice verificato, decisioni documentate, qualità prima della fretta.</p>
+      <div class="values">
+        <div class="v-card"><h4>Verifica, non ipotesi</h4><p>Ogni scelta architetturale parte dal codice reale, mai da supposizioni.</p></div>
+        <div class="v-card"><h4>Visione + esecuzione</h4><p>Tengo insieme strategia di prodotto e mani sul codice, senza deleghe.</p></div>
+        <div class="v-card"><h4>Sicurezza by design</h4><p>Secret cifrati, fail-closed, separazione delle origini: la security non è un'aggiunta.</p></div>
+        <div class="v-card"><h4>Decisioni tracciate</h4><p>ADR e documentazione: ogni scelta importante lascia una traccia.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="qr">
+    <div class="wrap">
+      <div class="cta-band">
+        <div class="qr-wrap">
+          <div class="qr-box"><img src="qr-code.svg" alt="QR code del sito di Francesco Papa"></div>
+          <div class="qr-text">
+            <h3>Salva questo profilo</h3>
+            <p>Inquadra il QR code con la fotocamera del telefono per aprire questa pagina e avere sempre a portata di mano chi sono, cosa costruisco e come contattarmi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contatti">
+    <div class="wrap">
+      <div class="sec-eyebrow">contatti</div>
+      <h2 class="sec-title">Mettiamoci in contatto</h2>
+      <p class="sec-sub">Per collaborazioni, partnership o per scoprire FlowAxion da vicino.</p>
+      <div class="contact-grid">
+        <div class="cc"><div class="lbl">// email</div><a href="mailto:info@flowaxion.com">info@flowaxion.com</a></div>
+        <div class="cc"><div class="lbl">// telefono</div><a href="tel:+393396919809">339 691 9809</a></div>
+        <div class="cc"><div class="lbl">// web</div><a href="https://flowaxion.com" target="_blank" rel="noopener">flowaxion.com</a></div>
+        <div class="cc"><div class="lbl">// github</div><a href="https://github.com/ciscodevelop" target="_blank" rel="noopener">@ciscodevelop</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap foot-grid">
+      <div>
+        <div class="foot-brand"><span class="sq"></span>Francesco Papa</div>
+        <p class="foot-desc">Founder, CEO &amp; CTO di FlowAxion. Costruisco il sintetizzatore della realtà aziendale: una piattaforma AI-native, dalla visione al deploy.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>// naviga</h4>
+          <a href="#build">Cosa costruisco</a>
+          <a href="#stack">Stack</a>
+          <a href="#approccio">Approccio</a>
+          <a href="#contatti">Contatti</a>
+        </div>
+        <div class="foot-col">
+          <h4>// contatti</h4>
+          <a href="mailto:info@flowaxion.com">info@flowaxion.com</a>
+          <a href="tel:+393396919809">339 691 9809</a>
+          <a href="https://flowaxion.com" target="_blank" rel="noopener">flowaxion.com</a>
+          <a href="https://github.com/ciscodevelop" target="_blank" rel="noopener">@ciscodevelop</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap"><div class="copyright">© 2026 Francesco Papa · FlowAxion · built from scratch</div></div>
+  </footer>
+</body>
+</html>
